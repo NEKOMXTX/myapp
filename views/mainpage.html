@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Личная страница</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="side-nav">
+        <a href="/zadanie1v2/index.html" class="active">Главная</a>
+        <a href="/zadanie2/index.html">Любимые места</a>
+        <a href="/zadanie3/index.html">Любимые книги</a>
+    </div>
+    
+    <div class="main">
+        <div class="profile-header">
+            <img style="float: left;" src="images/square.png" alt="Profile picture">
+            <h1>Смирнов Владислав Станиславович</h1>
+            <p>Студент МГОТУ</p>
+        </div>
+        <div class="profile-body">
+            <div class="aboutme">
+                <h2>Обо мне</h2>
+                <p>Люблю играть в игры и смотреть сериалы. Периодически хожу в тренажерный зал. Рост примерно 2 метра. По выходным провожу время с друзьями либо за компьютером. </p>
+            </div>
+            <div>
+                <h2>Навыки</h2>
+                <p>HTML, CSS, JavaScript, PHP, MSQLSM</p>
+            </div>
+            <div>
+                <h2>Проекты</h2>
+                <p>1. Главная<br>2. Любимые места<br>3. Любимые книги</p>
+            </div>
+            <div>
+                <h2>Друзья</h2>
+                <p><a href="https://vk.com/rocksabbat">Артём</a> учится в Финансовом университете на предпринимателя<br><a href="https://vk.com/montajnikvisotnic">Вова</a> учится в МГУ по направлению ВМК<br><a href="https://vk.com/chukarin2014">Игорь</a> учится в МИРЭА по направлению КИС</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="quiz-form">
+            <h3>Кто проживает на дне океана?</h3>
+            <div class="answer-container" id="answ-container1" style="background-color: none; width: 300px;">
+              <label>
+                <input type="radio" name="q1" value="a" onClick=" disableRadioButtonsBlock (name); changeColorAnswCont1('g')"> Спанч Боб Сквэр Пэнтс
+              </label>
+              <label>
+                <input type="radio" name="q1" value="b" onClick="disableRadioButtonsBlock (name); changeColorAnswCont1('r')"> Кик Бутовски
+              </label>
+              <label>
+                <input type="radio" name="q1" value="c" onClick="disableRadioButtonsBlock (name); changeColorAnswCont1('r')"> Финис и Ферб
+              </label>
+            </div>
+      
+            <h3>А, И, Б сидели на трубе. А упала. Б пропала. Кто остался на трубе?</h3>
+            <div class="answer-container" id="answ-container2" style="background-color: none; width: 300px;">
+              <label>
+                <input type="radio" name="q2" value="a" onClick=" disableRadioButtonsBlock (name); changeColorAnswCont2('r')"> А
+              </label>
+              <label>
+                <input type="radio" name="q2" value="b" onClick=" disableRadioButtonsBlock (name); changeColorAnswCont2('g')"> И
+              </label>
+              <label>
+                <input type="radio" name="q2" value="c" onClick="disableRadioButtonsBlock (name); changeColorAnswCont2('r')"> Б
+              </label>
+            </div>
+      
+            <h3>Вам нравится этот опрос?</h3>
+            <div class="answer-container" id="answ-container3" style="background-color: none; width: 300px;">
+              <label>
+                <input type="radio" name="q3" value="a" onClick="disableRadioButtonsBlock (name); changeColorAnswCont3('r')"> Нет
+              </label>
+              <label>
+                <input type="radio" name="q3" value="b" onClick="disableRadioButtonsBlock (name); changeColorAnswCont3('r')"> Да
+              </label>
+              <label>
+                <input type="radio" name="q3" value="c" onClick="disableRadioButtonsBlock (name); changeColorAnswCont3('g')"> Очень
+              </label>
+            </div>
+      
+            <br>
+            <button id="submitButton" type="submit">Проверить результат</button>
+            <button id="resetButton" type="reset" class="retry" disabled="true">Еще разок?</button>
+          </form>
+          
+        </div>
+    </div>
+
+    <section class="trigger-modalwin">
+      <button id="modalbutton" onclick="showModalWin()">ПРОЙДИТЕ ОПРОС!!!</button>
+    </section>
+
+    <section class="events-section">
+        <h2>Жизненные события</h2>
+        <ul class="event-list">
+          <li class="event" id="event1">
+            <div class="event-date">01.01.2023</div>
+            <div class="event-description">Празднование Нового Года</div>
+            <div class="event-actions">
+              <div class="like-dislike">
+                <div class="like">
+                <button class="like-btn">
+                  <i class="fa fa-thumbs-up"></i> Like
+                  <span class="like-count"></span>
+                </button>
+                </div>
+                <div class="dislike">
+                <button class="dislike-btn">
+                  <i class="fa fa-thumbs-down"></i> Dislike
+                  <span class="dislike-count"></span>
+                </button>
+                </div>
+              </div>
+            </div>
+            <div class="comments">
+              <h3>Комментарии:</h3>
+              <ul class="comment-list">
+                <li class="comment">
+                  <div class="comment-author">Имя автора</div>
+                  <div class="comment-text">Текст комментария</div>
+                </li>
+                <!-- Другие комментарии могут быть добавлены сюда -->
+              </ul>
+              <form>
+                <h3>Оставить комментарий:</h3>
+                <div class="form-group">
+                  <label for="comment-author">Имя:</label>
+                  <input type="text" id="comment-author" name="comment-author">
+                </div>
+                <div class="form-group">
+                  <label for="comment-text">Комментарий:</label>
+                  <textarea id="comment-text" name="comment-text"></textarea>
+                </div>
+                <button type="submit" class="comment-btn">Отправить</button>
+              </form>
+            </div>
+          </li>
+          <!-- Другие события могут быть добавлены сюда -->
+        </ul>
+      </section>
+      <script src="scripts.js"></script>
+      
+  </body>
+</html>

@@ -1,19 +1,48 @@
-const http = require('http')
+const http = require('http');
+const fs = require('fs');
+const path = require('path');
 
 const PORT = 3000;
 
 const server = http.createServer((req, res) => {
     console.log('Sever request');
-    console.log(req.url, req.method);
 
     res.setHeader('Content-Type', 'text/html' )
 
-    res.write('<head><link rel="stylesheet" href="#"></head>')
+    const createPath = (page) => path.resolve(__dirname, 'views', `${page}.html`);
 
-    res.write('<h1>Hello World</h1>')
+    let basePath = '';
 
-    res.end()
+    switch(req.url) {
+        case '/':
+            basePath = createPath('mainpage');
+            res.statusCode = 200;
+            break;
+        case '/places':
+            basePath = createPath('places');
+            res.statusCode = 200;
+            break;
+        case '/books':
+            basePath = createPath('books');
+            res.statusCode = 200;
+            break;
+        default:
+            basePath = createPath('error');
+            res.statusCode = 404;
+            break;
+    }
 
+    fs.readFile(basePath, (err, data) => {
+        if (err) {
+            console.log(err);
+            res.statusCode = 500;
+            res.end();
+        }
+        else {
+            res.write(data);
+            res.end();
+        }
+    })
 });
 
 server.listen(PORT, 'localhost', (error) => {
