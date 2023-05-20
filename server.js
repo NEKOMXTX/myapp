@@ -13,6 +13,18 @@ app.listen(PORT, (error) => {
     error ? console.log(error) : console.log(`listening port ${PORT}`);
 });
 
+app.use((req, res, next) => {
+    console.log(`path: ${req.path}`);
+    console.log(`method: ${req.method}`);
+    next();
+});
+
+app.use(express.static('styles'));
+
+app.use(express.static('images'));
+
+app.use(express.static('scripts'));
+
 app.get('/', (req, res) => {
     res.render(createPath('mainpage'));
 });

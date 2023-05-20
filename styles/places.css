@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+
+
+.main {
+    margin-left: 25%; /* установите отступ для контента */
+    padding: 20px;
+    box-sizing: border-box;
+  }
+
+  h1 {
+    text-align: center;
+    color: #0077b6;
+    margin-top: 50px;
+  }
+  .places-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* создаем 2 колонки */
+    grid-template-rows: repeat(3, 1fr); /* создаем 3 строки */
+    grid-gap: 10px; /* расстояние между элементами */
+  }
+
+  .places-container > div {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 20px;
+  }
+
+  .container-info{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+  }
+
+
+  .geo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+  img {
+    height: 200px;
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+  }
+
+  .places-container > div:hover {
+    transform: scale(1.01);
+    transition: all 0.2s ease-in-out;
+  }
+
+  .actions {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    
+  }
+
+  /* задаем стиль для боковой навигационной панели */
+  .side-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 25%;
+        background-color: #f1f1f1;
+        overflow-x: hidden;
+        padding-top: 20px;
+        z-index: 999; /* установите высокое значение z-index */
+  }
+
+    /* задаем стиль для ссылок в боковой навигационной панели */
+  .side-nav a {
+    display: block; /* отображаем ссылки как блоки */
+    color: #000; /* цвет текста */
+    padding: 16px; /* добавляем отступы */
+    text-decoration: none; /* убираем подчеркивание */
+  }
+
+    /* задаем стиль для активной ссылки в боковой навигационной панели */
+  .side-nav a.active {
+    background-color: #4CAF50; /* задаем фоновый цвет для активной ссылки */
+    color: white; /* меняем цвет текста на белый */
+  }

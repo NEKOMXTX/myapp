@@ -4,132 +4,20 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- <link rel="stylesheet" href="styles.css"> -->
+  <link rel="stylesheet" href="/books.css">
   <title>Мои любимые книги</title>
   <style>
-    body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-   }    
-
-  .main-nav {
-    margin-left: 25%; 
-    padding: 20px;
-    box-sizing: border-box;
-   }
-
-  .main {
-    display: flex;
-    flex-wrap: wrap;
-    width: 1000px ;
-    margin: 0 auto;
-  }
-
-  h1 {
-    text-align: center;
-    color: #0077b6;
-    margin-top: 50px;
-  }
-
-  .comment {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 400px;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 5px;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  
-  .impressions {
-    font-weight: bold;
-  }
-
-  .text {
-    align-self: center;
-    padding: 5px;
-  }
-
-
-  .book {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 300px;
-    height: 400px;
-    border: 1px solid black;
-    margin: 10px;
-    padding: 5px;
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .book img {
-    height: 150px;
-    margin-bottom: 10px;
-  }
-
-  .book-title {
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-
-  .book-author {
-    font-style: italic;
-  }
-
-  .book-description {
-    margin-top: 10px;
-  }
-
-  .actions {
-    margin-top: auto;
-  }
-
-  .buy {
-    margin-top: auto
-  }      
-  .side-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 25%;
-    background-color: #f1f1f1;
-    overflow-x: hidden;
-    padding-top: 20px;
-    z-index: 999; 
-  }
-
-      
-  .side-nav a {
-    display: block; 
-    color: #000; 
-    padding: 16px;
-    text-decoration: none; 
-  }
-
-  .side-nav a.active {
-    background-color: #4CAF50;
-    color: white;
-  }
 
   </style>
 </head>
 <body>
-  <%- include('./partials/nav.ejs') %>
+  <%- include('./partials/navbooks.ejs') %>
 
   <div class="main-nav">
     <h1>Мои любимые книги</h1>
     <div class="main">
       <div class="book">
-        <img src="images/mim.jpg" alt="Книга 1">
+        <img src="/mim.jpg" alt="Книга 1">
         <div class="book-title">Мастер и Маргарита</div>
         <div class="book-author">Михаил Афанасьевич Булгаков</div>
         <div class="book-description">Роман, который описывает приключения дьявола и его свиты в Москве 1930-х годов, а также рассказывает историю Христа и Понтия Пилата.</div>
@@ -146,7 +34,7 @@
       </div>
 
       <div class="book">
-        <img src="images/1984.jpg" alt="Книга 3">
+        <img src="/1984.jpg" alt="Книга 3">
         <div class="book-title">1984</div>
         <div class="book-author">Джордж Оруэлл</div>
         <div class="book-description">Роман, который описывает тоталитарное общество, где правительство контролирует каждый аспект жизни граждан. Главный герой пытается бороться против системы.</div>
@@ -163,7 +51,7 @@
       </div>
 
       <div class="book">
-        <img src="images/vim.jpeg" alt="Книга 2">
+        <img src="/vim.jpeg" alt="Книга 2">
         <div class="book-title">Война и мир</div>
         <div class="book-author">Лев Николаевич Толстой</div>
         <div class="book-description">Роман о жизни русских аристократов во время войны 1812 года и их жизненных перипетий.</div>
